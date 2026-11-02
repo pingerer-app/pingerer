@@ -1,0 +1,27 @@
+[package]
+name = "pingerer"
+version = "0.3.0"
+edition = "2024"
+description = "Pingerer from your terminal: uptime, SSL, DNS and email monitoring, incidents, heartbeats and deploys"
+homepage = "https://pingerer.com"
+repository = "https://github.com/pingerer-app/pingerer"
+readme = "README.md"
+
+[dependencies]
+chrono = { version = "0.4.45", default-features = false, features = ["clock", "std"] }
+rpassword = "7.5.4"
+serde_json = { version = "1.0.154", features = ["preserve_order"] }
+ureq = "3.5.0"
+
+[dev-dependencies]
+regex = "1.13.1"
+
+[profile.release]
+opt-level = "s"
+lto = true
+codegen-units = 1
+strip = true
+
+# The profile cargo-dist builds releases with.
+[profile.dist]
+inherits = "release"
