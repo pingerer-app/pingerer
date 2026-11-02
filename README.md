@@ -160,3 +160,7 @@ push --tags`). GitHub Actions builds every platform's download, the
 installers and the Homebrew formula (`.github/workflows/release.yml`, made
 by [dist](https://opensource.axo.dev/cargo-dist/)). The API itself is
 documented at https://pingerer.com/docs/api.
+
+## License
+
+MIT. See [LICENSE](LICENSE).
